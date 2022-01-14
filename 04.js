@@ -12,3 +12,4 @@ function copySorted(arr) {
 
 let arr2 = ["HTML", "JavaScript", "CSS"];
 let res = copySorted(arr2);
+la
