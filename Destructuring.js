@@ -10,31 +10,30 @@
 // Если объект salaries пустой, то нужно вернуть null.
 // Если несколько высокооплачиваемых сотрудников, можно вернуть любого из них.
 
-function topSalary(arg){
-    let theRichestGuy = 0;
-    let theNameOfRichest = "";
-    let x = Object.entries(arg);
+function topSalary(arg) {
+  let theRichestGuy = 0;
+  let theNameOfRichest = "";
+  let x = Object.entries(arg);
 
-    if (x.length == 0){
-      return null;
-    }
-    else {
-      for(let [name, price] of x){
-        if(price >= theRichestGuy){
-          theRichestGuy = price;
-          theNameOfRichest = name;
-        }
+  if (x.length == 0) {
+    return null;
+  } else {
+    for (let [name, price] of x) {
+      if (price >= theRichestGuy) {
+        theRichestGuy = price;
+        theNameOfRichest = name;
       }
     }
-    return theNameOfRichest;
   }
+  return theNameOfRichest;
+}
 
-  let salaries = {
-    "John": 100,
-    "Pete": 300,
-    "Mary": 250,
-    "Vasia": 0,
-    "Svyat": 2500000000
-  };
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250,
+  "Vasia": 0,
+  "Svyat": 2500000000
+};
 
-  topSalary(salaries);
+topSalary(salaries);
