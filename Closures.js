@@ -110,6 +110,18 @@ fn();
 // fn(); //returns 2
 // fn(); //returns 3
 // fn(); //returns 5
+function Q7(){
+  let x = 1;
+  let y = 0;
+  return function(){
+    let z = x + y;
+    y = x;
+    x = z;
+    return x;
+  }
+}
+
+var fn7 = Q7();
 
 /* TODO */
 
@@ -119,6 +131,10 @@ fn();
 // person.getName() === 'foo' //true
 // person.setName() = 'bar'
 // person.getName() === 'bar' //true
+
+function Q8(arg){
+
+}
 
 /* TODO */
 
