@@ -133,14 +133,26 @@ var fn7 = Q7();
 // person.getName() === 'bar' //true
 
 function Q8(arg){
-
+    this.getName = function(){
+      return arg;
+    }
+    this.setName = function(arg2){
+      arg = arg2;
+    }
 }
+
+var person = new Q8("foo");
 
 /* TODO */
 
 // 9. Write a function that prints the current time to the console once every
 // second after it is called. HINT: setInterval
 
+function currentTime(){
+  return console.log(Date());
+}
+
+let printTime = setInterval(currentTime, 1000);
 /* TODO */
 
 // A. Write a function that prints the current time to the console once every
