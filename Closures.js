@@ -165,6 +165,20 @@ let printTime = setInterval(currentTime, 1000);
 // timer automatically stops.
 // HINT: clearInterval
 
+function QA(){
+  function currentTime(){
+    console.log(Date());
+    count++;
+    if(count === 4){
+      clearTimeout(printTime);
+    }
+  }
+
+  let count = 0;
+
+  let printTime = setInterval(currentTime, 1000);
+}
+
 /* TODO */
 
 // B. Write a constructor function that returns an object that represents
