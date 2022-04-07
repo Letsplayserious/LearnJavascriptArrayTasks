@@ -190,6 +190,22 @@ function QA(){
 // stopwatch.ElapsedTime => displays number of seconds since timer started
 // stopwatch.start() => resumes timer
 
+function QB(){
+  this.start = function(){
+    if(this.firstDate === undefined){
+      return this.firstDate = Date.now();
+    }
+  }
+  this.getElapsed = function(){
+    return this.elapsedTime = ((Date.now() - this.firstDate)*0.001).toFixed(1);
+  }
+  this.stop = function(){
+    this.firstDate = this.elapsedTime;
+  }
+}
+
+var stopwatch = new QB();
+
 /* TODO */
 
 // C. Write a constructor function that takes a name and  returns an object
