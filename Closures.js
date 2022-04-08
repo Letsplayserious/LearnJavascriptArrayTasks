@@ -247,3 +247,16 @@ class QC
 */
 
 /* TODO */
+
+function QC(name){
+  this.name, this.trueCount;
+  this.getNumberOfPeopleCreatedThusFar = function(){
+    console.log(this.trueCount);
+  }
+  if(name){
+    QC.count++;
+    this.name = name;
+    this.trueCount = QC.count;
+  }
+}
+QC.count = 0;
