@@ -191,16 +191,22 @@ function QA(){
 // stopwatch.start() => resumes timer
 
 function QB(){
+  this.fullTime = 0;
   this.start = function(){
-    if(this.firstDate === undefined){
+      this.zeroDate = Date.now();
       return this.firstDate = Date.now();
-    }
   }
   this.getElapsed = function(){
-    return this.elapsedTime = ((Date.now() - this.firstDate)*0.001).toFixed(1);
+      return this.elapsedTime = +((Date.now() - this.zeroDate)*0.001).toFixed(1);
   }
   this.stop = function(){
-    this.firstDate = this.elapsedTime;
+    this.fullTime = 0;
+    return this.firstDate = 0;
+  }
+  this.pause = function(){
+    this.fullTime += +((Date.now() - this.firstDate)*0.001);
+    this.firstDate = 0;
+    console.log(this.fullTime.toFixed(1));
   }
 }
 
@@ -241,3 +247,16 @@ class QC
 */
 
 /* TODO */
+
+function QC(name){
+  this.name, this.trueCount;
+  this.getNumberOfPeopleCreatedThusFar = function(){
+    console.log(this.trueCount);
+  }
+  if(name){
+    QC.count++;
+    this.name = name;
+    this.trueCount = QC.count;
+  }
+}
+QC.count = 0;
