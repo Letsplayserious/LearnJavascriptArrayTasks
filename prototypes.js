@@ -4,13 +4,12 @@
 let hamster = {
     eat(food) {
       if(!this.stomach){
-        this.stomach;
-        this.stomach = [];
-        this.stomach.push(food);
+      this.stomach = [];
+      this.stomach.push(food);
       }
       else{
-      this.stomach.push(food);
-        }
+        this.stomach.push(food);
+      }
     }
   };
 
