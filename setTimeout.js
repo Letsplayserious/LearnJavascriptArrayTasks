@@ -1,7 +1,7 @@
 // Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.
 
 function printNumbers(from, to){
-  let beginning = from*1000;
+  let beginning = from*1000 - 1000;
   let diff = (to - from)*1000;
 
   let tick = () => {
@@ -9,9 +9,10 @@ function printNumbers(from, to){
   }
 
   let ticking = function(){
-    let ticking = setInterval(tick, 1000)
-    setTimeout(()=>{clearInterval(ticking)}, diff);
+    let ticktick = setInterval(tick, 1000)
+    setTimeout(()=>{clearInterval(ticktick)}, diff);
   };
+
   setTimeout(ticking, beginning);
 }
 
