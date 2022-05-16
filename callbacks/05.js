@@ -2,9 +2,16 @@
 
 // console.log(mapWith([1, 2, 3], addTwo)); should output [ 3, 4, 5 ]
 
-function forEach(){
+function addTwo(num) {
+    return num + 2;
+  }
 
+function forEach(array, callback){
+    for(let i = 0; i < array.length; i++){
+        callback(array[i]);
+    }
 }
+
 
 function mapWith(array, changingArray){
     let newArr = [];
@@ -13,3 +20,5 @@ function mapWith(array, changingArray){
     });
     return newArr;
 }
+
+console.log(mapWith([1, 2, 3], addTwo))
