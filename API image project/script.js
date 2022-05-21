@@ -1,18 +1,16 @@
-let button = document.getElementById("button");
-let inputValue = document.getElementById("quantity");
-button.addEventListener("click", addingPicture);
-button.addEventListener("click", ()=>console.log(inputValue.value));
+let resultBlock = document.getElementById("result");
+let pageNumberEl = document.getElementById("page-number");
+let clickMeButton = document.getElementById("click-me");
+clickMeButton.addEventListener("click", makeRequest);
 
-
-function addingPicture(arg){
-    $.ajax(`https://repetitora.net/api/JS/Images?page=${inputValue.value}&count=1`, {
-        success: function(data) {
-            let image = new Image;
-            data.map(item => {
-                let image = new Image();
-                image.src = item.original;
-                document.body.appendChild(image);
-            });
+function makeRequest() {
+    $.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumberEl}&count=1`, {
+        success: (data) => {
+            data.map(el => {
+                let img = document.createElement("img");
+                img.src = el.thumbnail;
+                document.getElementById("result").appendChild(img);
+            })
         }
-    });
+    })
 }
