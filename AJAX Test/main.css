@@ -1,0 +1,18 @@
+*{
+    margin: 20px;
+}
+
+.post{
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.post__title{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.post__txt{
+    font-size: 12px;
+    color: green;
+}
