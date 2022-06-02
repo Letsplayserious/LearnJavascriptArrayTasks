@@ -150,9 +150,14 @@ function getPost(id){
     });
 }
 
-function getPostComments(){
+function getPostComments(data){
+    // const {
+    //     post: userId,
+    // } = data;
+    const {title, body, id} = data;
+    console.log(id);
     return new Promise((resolve, reject) => {
-        myHttp.get(`https://jsonplaceholder.typicode.com/comments?postId=1`, (err, res) => {
+        myHttp.get(`https://jsonplaceholder.typicode.com/comments?postId=${id}`, (err, res) => {
             if(err){
                 reject();
             }
@@ -167,13 +172,13 @@ function getUserCreatedPost(){
             if(err){
                 reject();
             }
-            resolve(res);
+            resolve({...data, user:res});
         })
     })
 }
 
 getPost()
-.then(post => console.log(post))
+.then(post => getPost(post))
 .then(comments => getPostComments(comments))
 .then(user => console.log(user))
 .catch(err => console.log(err));
